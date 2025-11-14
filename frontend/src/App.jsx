@@ -1,5 +1,5 @@
 
-import { SignIn } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 import './App.css'
 
 function App() {
@@ -7,7 +7,12 @@ function App() {
   return (
     <>
       <h1>sign in with google</h1>
-      <SignIn />
+       <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </>
   )
 }
