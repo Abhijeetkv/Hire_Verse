@@ -132,7 +132,7 @@ export async function endSession(req,res) {
             return res.status(404).json({message: "Session not found"});
         }
 
-        if(session.host.toString() !== userId.toString){
+        if(session.host.toString() !== userId.toString()){
             return res.status(403).json({message: "Only the host can end the session"});
         }
 
@@ -143,7 +143,7 @@ export async function endSession(req,res) {
         session.status = "completed";
         await session.save();
 
-        const call  = await streamClient.video.call("default", session.callId)
+        const call  = streamClient.video.call("default", session.callId)
         await call.delete({hard: true});
 
         const channel = chatClient.channel("messaging", session.callId);
