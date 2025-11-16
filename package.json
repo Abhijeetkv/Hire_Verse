@@ -10,9 +10,5 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "description": "",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "inngest": "^3.45.0"
-  }
+  "description": ""
 }
