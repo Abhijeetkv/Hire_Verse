@@ -1,13 +1,10 @@
 import toast from 'react-hot-toast'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-import Navbar from '../components/navbar.jsx'
 import HeroSection from '../components/HeroSection.jsx'
 
 const HomePage = () => {
   return (
     <>
-      
-      
       <HeroSection />
         <button className='btn btn-primary mt-20' onClick={() => toast.success('Signed in successfully!')}>click me</button>
 
