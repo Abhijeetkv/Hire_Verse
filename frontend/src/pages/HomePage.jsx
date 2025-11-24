@@ -1,21 +1,37 @@
 import toast from 'react-hot-toast'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 import HeroSection from '../components/HeroSection.jsx'
-import Navbar from '../components/navbar.jsx'
+import Navbar from '../components/Navbar.jsx'
 
 const HomePage = () => {
   return (
     <>
-      <Navbar />
-      <HeroSection />
-        <button className='btn btn-primary mt-20' onClick={() => toast.success('Signed in successfully!')}>click me</button>
+      <div className="min-h-screen bg-linear-to-b from-blue-50 to-blue-200">
+        
+        <Navbar />
+        <HeroSection />
 
-       <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+        <div className="flex flex-col items-center mt-20 gap-4">
+
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="btn btn-primary">Sign In</button>
+            </SignInButton>
+          </SignedOut>
+
+          <SignedIn>
+            <button
+              className="btn btn-success"
+              onClick={() => toast.success('Signed in successfully!')}
+            >
+              Click me
+            </button>
+            <UserButton />
+          </SignedIn>
+
+        </div>
+
+      </div>
     </>
   )
 }

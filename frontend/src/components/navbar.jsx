@@ -1,28 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-
+function Navbar() {
   return (
-      <nav
-        className=" fixed z-20 w-full border-b backdrop-blur-3xl"
-      >
-        <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-
-            {/* Logo + Mobile Toggle */}
-            <div className="flex w-full items-center justify-between gap-12">
-              <Link>
-                <img src={logo} alt="Logo" className="h-10 w-auto" />
-              </Link>
-              <div className='border p-2 px-4 lg:px-7 rounded-full  '>
-                 <button >Sign Up</button>
-              </div>
+    <>
+        <div className="container border border-gray-200 px-5 py-2 lg:py-3 lg:px-40">
+          <div className="flex items-center justify-between">
+            <div className="flex">
+              <img src={logo} alt="" className="h-12 w-12 pt-2" />
+              <p className="text-2xl text-gray-950 pt-3 px-1 text-bold ">HireVerse</p>   
             </div>
+            <Link to="/">
+               <button className="text-gray-950 btn btn-primary px-6 py-2 rounded-2xl">Sign Up</button>
+            </Link>
           </div>
         </div>
-      </nav>
+    </>
   );
 }
 
