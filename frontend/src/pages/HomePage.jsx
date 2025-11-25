@@ -2,6 +2,7 @@ import toast from 'react-hot-toast'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 import HeroSection from '../components/HeroSection.jsx'
 import Navbar from '../components/Navbar.jsx'
+import Footer from '../components/Footer.jsx'
 
 const HomePage = () => {
   return (
@@ -30,6 +31,7 @@ const HomePage = () => {
           </SignedIn>
 
         </div>
+        <Footer />
 
       </div>
     </>

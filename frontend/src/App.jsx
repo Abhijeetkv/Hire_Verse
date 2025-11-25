@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import ProblemsPage from "./pages/ProblemsPage.jsx";
 import { Toaster } from "react-hot-toast";
+import DashBoard from "./pages/Dashboard.jsx";
 
 function App() {
   const { isSignedIn, isLoaded } = useUser();
@@ -12,7 +13,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={!isSignedIn ? <HomePage /> : <Navigate to="/dashboard" />}
+        />
+        <Route path="/dashboard" element={isSignedIn ? <DashBoard /> : <Navigate to="/" />} />
+
         <Route
           path="/problems"
           element={isSignedIn ? <ProblemsPage /> : <Navigate to="/" />}
