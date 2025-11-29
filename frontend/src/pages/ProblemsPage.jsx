@@ -2,10 +2,11 @@ import React from "react";
 import DashNavbar from "../components/DashNavbar";
 import { SignedIn, UserButton } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
-import { ChevronRightIcon, Code2Icon, Import } from "lucide-react";
+import { ChevronRightIcon, Code2Icon } from "lucide-react";
 import { PROBLEMS } from "../data/problem.js";
 import { Link } from "react-router-dom";
 import { getDifficultyBadgeClass } from "../lib/utils.js";
+
 
 const ProblemsPage = () => {
   const problems = Object.values(PROBLEMS)
