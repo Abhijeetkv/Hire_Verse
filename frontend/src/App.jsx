@@ -25,7 +25,7 @@ function App() {
           element={isSignedIn ? <ProblemsPage /> : <Navigate to="/" />}
         />
         <Route
-          path="/problems/:id"
+          path="/problem/:id"
           element={isSignedIn ? <ProblemPage /> : <Navigate to="/" />}
         />
       </Routes>
