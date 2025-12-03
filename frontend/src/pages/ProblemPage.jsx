@@ -24,7 +24,6 @@ const ProblemPage = () => {
 
   const currentProblem = PROBLEMS[currentProblemId];
 
-  // update problem when URL param changes
   useEffect(() => {
     if (id && PROBLEMS[id]) {
       setCurrentProblemId(id);

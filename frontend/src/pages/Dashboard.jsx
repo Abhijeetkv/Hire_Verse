@@ -6,18 +6,9 @@ import DashNavbar from "../components/DashNavbar";
 const Dashboard = () => {
   return (
     <>
-      <div className="min-h-screen bg-linear-to-b from-blue-50 to-blue-200">
+      <div className="min-h-screen bg-linear-to-b from-gray-100 to-gray-400">
         <DashNavbar />
-        <div>Dashboard</div>
-        <SignedIn>
-          <button
-            className="btn btn-success"
-            onClick={() => toast.success("Signed in successfully!")}
-          >
-            Click me
-          </button>
-          <UserButton />
-        </SignedIn>
+        
       </div>
     </>
   );
