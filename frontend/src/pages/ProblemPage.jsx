@@ -63,10 +63,8 @@ const ProblemPage = () => {
       .map((line) =>
         line
           .trim()
-          // remove spaces after [ and before ]
           .replace(/\[\s+/g, "[")
           .replace(/\s+\]/g, "]")
-          // normalize spaces around commas to single space after comma
           .replace(/\s*,\s*/g, ",")
       )
       .filter((line) => line.length > 0)
@@ -88,7 +86,6 @@ const ProblemPage = () => {
     setOutput(result);
     setIsRunning(false);
 
-    // check if code executed successfully and matches expected output
 
     if (result.success) {
       const expectedOutput = currentProblem.expectedOutput[selectedLanguage];
@@ -112,7 +109,6 @@ const ProblemPage = () => {
 
       <div className="flex-1">
         <PanelGroup direction="horizontal">
-          {/* left panel- problem desc */}
           <Panel defaultSize={40} minSize={30}>
             <ProblemDescription
               problem={currentProblem}
@@ -124,10 +120,8 @@ const ProblemPage = () => {
 
           <PanelResizeHandle className="w-2 bg-base-300 hover:bg-primary transition-colors cursor-col-resize" />
 
-          {/* right panel- code editor & output */}
           <Panel defaultSize={60} minSize={30}>
             <PanelGroup direction="vertical">
-              {/* Top panel - Code editor */}
               <Panel defaultSize={70} minSize={30}>
                 <CodeEditor
                   selectedLanguage={selectedLanguage}
@@ -141,7 +135,6 @@ const ProblemPage = () => {
 
               <PanelResizeHandle className="h-2 bg-base-300 hover:bg-primary transition-colors cursor-row-resize" />
 
-              {/* Bottom panel - Output Panel*/}
 
               <Panel defaultSize={30} minSize={30}>
                 <OutputPanel output={output} />
