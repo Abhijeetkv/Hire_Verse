@@ -11,7 +11,7 @@ const DashNavbar = () => {
 
   return (
     <>
-      <div className="container border-b border-gray-250 px-5 py-2 lg:py-3 lg:px-30">
+      <div className="border-b border-gray-250 px-5 py-2 lg:py-3 lg:px-30">
         <div className="flex items-center justify-between">
           <div className="flex">
             <img src={logo} alt="" className="h-12 w-12 pt-2" />
