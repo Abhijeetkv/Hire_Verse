@@ -107,7 +107,7 @@ const ProblemPage = () => {
     <div className="h-screen bg-base-100 flex flex-col">
       <DashNavbar />
 
-      <div className="flex-1">
+      <div className="flex-1 min-h-screen">
         <PanelGroup direction="horizontal">
           <Panel defaultSize={40} minSize={30}>
             <ProblemDescription
