@@ -30,9 +30,9 @@ function App() {
           element={isSignedIn ? <ProblemPage /> : <Navigate to="/" />}
         />
 
-        
+
         <Route
-          path="/session"
+          path="/session/:id"
           element={isSignedIn ? <SessionPage /> : <Navigate to="/" />}
         />
       </Routes>
