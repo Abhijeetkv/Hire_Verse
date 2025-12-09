@@ -2,7 +2,7 @@ import { SignInButton } from "@clerk/clerk-react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <>
       <div className=" border border-gray-200 px-5 py-2 lg:py-3 lg:px-40">
