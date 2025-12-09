@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import DashNavbar from "../components/DashNavbar";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
@@ -53,7 +52,7 @@ const Dashboard = () => {
 
         <WelcomeSection onCreateSession={() => setShowCreateModel(true)} />
 
-          <div className="container mx-auto px-6 pb-16">
+          <div className="container max-w-7xl mx-auto px-6 pb-16">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <StatsCards 
               activeSessionsCount={activeSessions.length}
