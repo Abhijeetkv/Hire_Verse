@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import { SignedIn, UserButton } from "@clerk/clerk-react";
+import {  UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
-import { BookOpen, BookOpenIcon, Flame, FlameIcon, LayoutDashboard } from "lucide-react";
+import {  FlameIcon, LayoutDashboard } from "lucide-react";
 
 const DashNavbar = () => {
   const isActive = (path) => {
@@ -13,12 +13,14 @@ const DashNavbar = () => {
     <>
       <div className="border-b border-gray-250 px-5 py-2 lg:py-3 lg:px-30">
         <div className="flex items-center justify-between">
-          <div className="flex">
+          <Link to="/">
+              <div className="flex">
             <img src={logo} alt="" className="h-12 w-12 pt-2" />
             <p className="text-xl text-gray-950 pt-3 px-1 text-bold sm:text-2xl">
               HireVerse
             </p>
           </div>
+          </Link>
 
           <div className="flex items-center gap-1">
             <Link
