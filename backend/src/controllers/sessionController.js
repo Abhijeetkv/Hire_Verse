@@ -1,5 +1,6 @@
 import { chatClient, streamClient } from "../lib/stream.js";
 import Session from "../modals/Session.js";
+import mongoose from "mongoose";
 
 
 export async function createSession(req,res) {
@@ -78,6 +79,10 @@ export async function getMyRecentSessions(req,res) {
 export async function getSessionById(req,res) {
     try {
         const {id} = req.params;
+
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({message: "Invalid session ID"});
+        }
 
         const session = await Session.findById(id)
         .populate("host", "name email clerkId profileImage ")
