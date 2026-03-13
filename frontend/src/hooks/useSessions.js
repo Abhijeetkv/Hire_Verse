@@ -35,7 +35,7 @@ export const useSessionById = (id) => {
   const result = useQuery({
     queryKey: ["session", id],
     queryFn: () => sessionApi.getSessionById(id),
-    enabled: !!id,
+    enabled: !!id && id !== "undefined",
     refetchInterval: 5000,
   });
 
