@@ -1,41 +1,25 @@
-import toast from 'react-hot-toast'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-import HeroSection from '../components/HeroSection.jsx'
-import Navbar from '../components/Navbar.jsx'
-import Footer from '../components/Footer.jsx'
+import Navbar from "../components/Navbar.jsx";
+import HeroSection from "../components/HeroSection.jsx";
+import FeaturesSection from "../components/FeaturesSection.jsx";
+import StatsSection from "../components/StatsSection.jsx";
+import HowItWorksSection from "../components/HowItWorksSection.jsx";
+import TestimonialsSection from "../components/TestimonialsSection.jsx";
+import CTASection from "../components/CTASection.jsx";
+import Footer from "../components/Footer.jsx";
 
 const HomePage = () => {
   return (
-    <>
-      <div className="min-h-screen bg-linear-to-b from-blue-50 to-blue-200">
-        
-        <Navbar />
-        <HeroSection />
+    <div className="min-h-screen bg-[#0A0A0F]">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <StatsSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <CTASection />
+      <Footer />
+    </div>
+  );
+};
 
-        <div className="flex flex-col items-center mt-20 gap-4">
-
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="btn btn-primary">Sign In</button>
-            </SignInButton>
-          </SignedOut>
-
-          <SignedIn>
-            <button
-              className="btn btn-success"
-              onClick={() => toast.success('Signed in successfully!')}
-            >
-              Click me
-            </button>
-            <UserButton />
-          </SignedIn>
-
-        </div>
-        <Footer />
-
-      </div>
-    </>
-  )
-}
-
-export default HomePage
+export default HomePage;
